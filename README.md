@@ -1,5 +1,6 @@
 # orangebeltexam
 
+sonarqube: https://sonarcloud.io/dashboard?id=ozatici_orangebeltexam
 
 
 MVP 1:
@@ -13,3 +14,5 @@ MVP2:
 The game should print the board to play on with all spaces empty (UAT 1)
 If a player makes a move in a spot where a bomb is, the game will be over & lost.( UAT 2)
 If a player makes a move in a spot without a bomb, the square will display the number of bombs surrounding the square. (UAT 3)
+
+MVP 3:
