@@ -19,3 +19,9 @@ MVP 3:
 A player can mark a spot as a bomb if they know there is a bomb there, and the game will continue. (UAT 4)
 If a player makes a move on a square without any neighboring bombs, the squares around it should be automatically opened, recursively. (UAT 6)
 A player should keep making moves that open squares OR mark them as bombs. If the whole board is opened, game over and won(UAT 5)
+
+
+
+NOTES as of final pomodoro:
+
+there is one unit test that i ran out of time to finish. It would probably take an additional pomodoro. I also think another pomodoro owuld be needed to get my code in tip top refactored shape

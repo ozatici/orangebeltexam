@@ -6,59 +6,39 @@ class Game {
   }
 
   makeMove(x, y, checkForBomb) {
-    console.log("solution is" + this.solution)
 
     this.playboard[x][y] = this.solution[x][y];
     this.print();
 
     if(checkForBomb) {
         if (this.solution[x][y] === "*") {
-            console.log("hit here")
             this.gameRunning = false;
             this.wonOrLost = "lost";
             console.log("[Sandbox 3x3] BOOM! – Game Over.");
+            return;
           }
     }
-    this.recurse(x,y);
-    console.log("playboard is" + this.playboard)
+    let intersection = this.playboard.filter(x => this.solution.includes(x));
 
-    if (this.playboard == this.solution) {
+    if (!this.containsInt(intersection)) {
         this.gameRunning = false;
         this.wonOrLost = 'won';
+        console.log("hit here")
     }
 
   }
 
-  checkForBomb(x, y) {
-    
+
+  containsInt(arr) {
+      for (let i of arr){
+          if (typeof i === number) {
+              return true;
+          }
+      }
+      return false;
   }
 
-  recurse(x,y){
-    if (this.solution[x][y] === '_') {
-        if (x-1 >= 0 && y - 1 >=0) {
-            this.makeMove(x-1, y-1, false);
-        }
-        if (x -1 >= 0) {
-            this.makeMove(x-1,y, false);
-        }
-        if (y - 1 >= 0) {
-            this.makeMove(x, y-1, false);
-        }
-        if (x + 1 <= 2 && y + 1 <=2) {
-            this.makeMove(x+1, y+1, false);
-        }
-
-        if (x + 1 <= 2) {
-            this.makeMove(x+1, y, false);
-
-        }
-        if (y + 1 <= 2) {
-            this.makeMove(x, y+1, false);
-
-        }
-    }
-
-  }
+ 
 
   markBomb(x,y) {
     this.playboard[x][y] = this.solution[x][y];
@@ -97,11 +77,7 @@ class Game {
   }
 
   constructor() {
-    // this.solution = [
-    //   ["2", "2", "1"],
-    //   ["*", "*", "2"],
-    //   ["3", "*", "2"],
-    // ];
+
     this.playboard = [
       [" ", " ", " "],
       [" ", " ", " "],
