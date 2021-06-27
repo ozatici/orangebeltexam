@@ -16,3 +16,6 @@ If a player makes a move in a spot where a bomb is, the game will be over & lost
 If a player makes a move in a spot without a bomb, the square will display the number of bombs surrounding the square. (UAT 3)
 
 MVP 3:
+A player can mark a spot as a bomb if they know there is a bomb there, and the game will continue. (UAT 4)
+If a player makes a move on a square without any neighboring bombs, the squares around it should be automatically opened, recursively. (UAT 6)
+A player should keep making moves that open squares OR mark them as bombs. If the whole board is opened, game over and won(UAT 5)
